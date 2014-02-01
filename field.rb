@@ -1,9 +1,9 @@
 class Field
-  attr_accessor :x, :y, :text, :width, :height
-  def initialize(x, y, text, width, height)
+  attr_accessor :text, :x, :y, :width, :height
+  def initialize(text, x, y, width, height)
+    @text = text
     @x = x
     @y = y
-    @text = text
     @width = width
     @height = height
   end

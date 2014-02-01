@@ -2,9 +2,10 @@ require 'RMagick'
 include Magick
 
 class Writer
-  DEFAULT_POINTSIZE = 14
+  DEFAULT_POINTSIZE = 18
   DEFAULT_FONT_FAMILY = 'Arial'
   DEFAULT_GRAVITY = WestGravity
+  SPACING = 5
 
   def self.write(img, x, y, text, width, height)
     dy = 0
@@ -27,8 +28,8 @@ class Writer
       end
 
       line.chomp!
-      write_text(img, x, y + dy, line, d.w, d.h, oointsize_width)
-      dy += pointsize_height
+      write_text(img, x, y + dy, line, width, d.h, oointsize_width)
+      dy += pointsize_height + SPACING
     end
   end
 
